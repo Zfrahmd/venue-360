@@ -286,6 +286,7 @@
                     <div class="d-flex">
                         <button class="btn btn-outline-custom me-2" id="openLoginModal">Log in</button>
                         <button class="btn btn-primary-custom" id="openSignupModal">Sign up</button>
+                        <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-warning text-white" %>
                     </div>
                 </div>
             </div>
@@ -654,36 +655,40 @@
     </footer>
 
     <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title">Log in</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm">
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary-custom w-100 py-2">Log in</button>
-                        <div class="text-center mt-3">
-                            Don't have an account? <a href="#" id="switchToSignup" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a>
-                        </div>
-                        <div class="text-center mt-2">
-                            <a href="#" id="adminLoginLink" data-bs-toggle="modal" data-bs-target="#adminLoginModal" data-bs-dismiss="modal">Admin login</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
+      
+    <%#= link_to "Forgot your password?", new_password_path(:user) %>
+    
+    <%#= form_for(:resource, :url => session_path(:resource)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id:"loginForm"}) do |f| %>
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header border-0">
+                      <h5 class="modal-title">Log in</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="mb-3">
+                          <label for="loginEmail" class="form-label">Email</label>
+                          <%= f.text_field :email, class:'form-control', id:"loginEmail" %>
+                      </div>
+                      <div class="mb-3">
+                          <label for="loginPassword" class="form-label">Password</label>
+                          <%= f.password_field :password, class:'form-control', id:"loginPassword" %>
+                      </div>
+                      <%= f.submit 'Sign in' %>
+                      <div class="text-center mt-3">
+                          Don't have an account? <a href="#" id="switchToSignup" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a>
+                      </div>
+                      <div class="text-center mt-2">
+                          <a href="#" id="adminLoginLink" data-bs-toggle="modal" data-bs-target="#adminLoginModal" data-bs-dismiss="modal">Admin login</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>`
+    <% end %>
     <!-- Signup Modal -->
     <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog my-6">
@@ -749,12 +754,12 @@
     
     <script>
         // Form submissions
-        document.getElementById('loginForm').onsubmit = function(e) {
+        /*document.getElementById('loginForm').onsubmit = function(e) {
             e.preventDefault();
             alert('Login functionality would be implemented here');
             var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
             loginModal.hide();
-        }
+        }*/
         
         document.getElementById('signupForm').onsubmit = function(e) {
             e.preventDefault();
