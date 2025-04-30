@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuxStay - Premium Hotel Booking</title>
+    <title>Venue 360 - Premium Hotel Booking</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         :root {
+            /*--primary-color: #ff385c;*/
             --primary-color: #ff385c;
             --primary-hover: #e61e4d;
             --text-color: #333;
@@ -31,12 +32,16 @@
         
         .navbar-brand {
             font-weight: 700;
-            color: var(--primary-color) !important;
+            color: #000000;
             font-size: 24px;
         }
         
         .nav-link {
             font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: red;
         }
         
         .btn-primary-custom {
@@ -122,6 +127,18 @@
             gap: 10px;
         }
         
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+        
+        .indicator.active {
+            background-color: white;
+        }
+        
         .property-title {
             font-size: 28px;
             margin-bottom: 10px;
@@ -132,12 +149,12 @@
         }
         
         .highlight-icon {
-            color: var(--primary-color);
+            color: black;
             margin-right: 5px;
         }
         
         .amenity-icon {
-            color: var(--primary-color);
+            color: black;
             margin-right: 8px;
             width: 20px;
             text-align: center;
@@ -147,7 +164,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: sticky;
-            top: 20px;
+            top: 80px;
         }
         
         .price {
@@ -180,7 +197,7 @@
         }
         
         .rating-stars {
-            color: var(--primary-color);
+            //color: var(--primary-color);
         }
         
         .average-rating {
@@ -229,6 +246,10 @@
             background-color: #555;
             color: white;
         }
+
+        .modal-dialog {
+            margin-top: 8rem;
+        }
         
         @media (max-width: 768px) {
             .property-title {
@@ -245,12 +266,12 @@
     <!-- Header/Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">LuxStay</a>
+            <a class="navbar-brand" href="#">Venue 360</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
+            <div class="collapse navbar-collapse justify-content-center align-items-center collapse" id="navbarNav">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Stays</a>
                     </li>
@@ -261,17 +282,21 @@
                         <a class="nav-link" href="#">Online Experiences</a>
                     </li>
                 </ul>
-                <div class="d-flex">
-                    <button class="btn btn-outline-custom me-2" id="openLoginModal">Log in</button>
-                    <button class="btn btn-primary-custom" id="openSignupModal">Sign up</button>
+                <div class="flex-end">
+                    <div class="d-flex">
+                        <button class="btn btn-outline-custom me-2" id="openLoginModal">Log in</button>
+                        <button class="btn btn-primary-custom" id="openSignupModal">Sign up</button>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="container my-4">
-        <section class="hero">
+    <!-- Hero Section with Carousel -->
+        <!--<section class="hero">
             <div class="carousel">
                 <div class="carousel-inner" id="carouselInner">
                     <div class="carousel-item">
@@ -296,71 +321,92 @@
                     <div class="indicator" onclick="goToSlide(3)"></div>
                 </div>
             </div>
-        </section>
-        <!--
-        <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://picsum.photos/536/354" alt="Luxury Suite">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/id/15/367/267" alt="Bedroom">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/id/11/367/267" alt="Bathroom">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/id/17/367/267" alt="Living Area">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+        </section>-->
+        <div class="">
+            <h1 class="property-title">Single studio</h1>
         </div>
-        -->
+        <section class="mt-4 mb-5">
+            <div class="container px-0">
+                <div class="row">
+                    <div class="col-5 px-0">
+                        <div class="card text-bg-dark mx-0">
+                            <img src='https://i.postimg.cc/xT7Ps1Sm/IMG-20250427-WA0074.jpg' width="500px" height= "410px"class="card-img" alt='IMG-20250427-WA0074'/></a>
+                            <div class="">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-4">
+                                <div class="card text-bg-dark">
+                                    <img src='https://i.postimg.cc/cCtv6Z5q/IMG-20250427-WA0066.jpg' width="50px" height= "200px" class="card-img" alt='IMG-20250427-WA0066'/></a>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card text-bg-dark">
+                                    <img src='https://i.postimg.cc/7ZnnqM23/IMG-20250427-WA0067.jpg' width="50px" height= "200px" class="card-img"  alt='IMG-20250427-WA0067'/></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2 d-flex justify-content-center">
+                            <div class="col-4">
+                                <div class="card text-bg-dark">
+                                    <img src='https://i.postimg.cc/k4BQN0hs/IMG-20250427-WA0071.jpg' class="card-img" alt='IMG-20250427-WA0071'/></a>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card text-bg-dark">
+                                    <img src='https://i.postimg.cc/xTrvHFGG/IMG-20250427-WA0078.jpg' class="card-img" alt='IMG-20250427-WA0078'/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Property Details -->
         <div class="row">
             <div class="col-lg-8">
-                <h1 class="property-title">Luxury Penthouse with Panoramic City Views</h1>
-                <div class="d-flex align-items-center property-location mb-3">
-                    <i class="fas fa-map-marker-alt me-2"></i>
-                    <span>Downtown, New York, United States</span>
+                <h1 class="property-title">Single studio</h1>
+                <div class="d-flex align-items-center mb-3">
+                    <h5>Entire rental unit in Freetown, Sierra Leone</h5>
                 </div>
                 
                 <div class="d-flex flex-wrap gap-3 mb-4">
                     <div class="d-flex align-items-center">
                         <i class="fas fa-home highlight-icon"></i>
-                        <span>Entire apartment</span>
+                        <span>1 guest</span>
                     </div>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-user-friends highlight-icon"></i>
-                        <span>4 guests</span>
+                        <span>Studio</span>
                     </div>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-bed highlight-icon"></i>
-                        <span>2 bedrooms</span>
+                        <span>1 bedroom</span>
                     </div>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-bath highlight-icon"></i>
-                        <span>2 baths</span>
+                        <span>1 baths</span>
                     </div>
                 </div>
-                
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="d-flex align-items-center">
+                    <div class="rating-stars mb-1">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="text-muted mx-2">2 reviews</div>
+                </div>
+            </div>
                 <hr>
-                
                 <div class="my-4">
-                    <p>Experience luxury living in this stunning penthouse with breathtaking views of the city skyline. This spacious 2-bedroom, 2-bathroom apartment features high-end finishes, floor-to-ceiling windows, and a private terrace.</p>
-                    <p>The open-concept living area is perfect for entertaining, while the gourmet kitchen comes fully equipped with premium appliances. Located in the heart of downtown, you'll be steps away from the city's best restaurants, shops, and attractions.</p>
+                    <p>Experience luxury living in this stunning living space. This spacious 2-bedroom, 2-bathroom apartment features high-end finishes, floor-to-ceiling windows, and a private terrace.</p>
+                    <p>The open-concept living area is perfect for entertaining, while the gourmet kitchen comes fully equipped with premium appliances. 
+                    Located in the Western part of Freetown, you'll be steps away from the city's best restaurants, shops, and attractions.</p>
                 </div>
                 
                 <hr>
@@ -597,7 +643,7 @@
             </div>
             
             <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <div class="mb-3 mb-md-0 text-muted">© 2024 LuxStay, Inc. All rights reserved</div>
+                <div class="mb-3 mb-md-0 text-muted">© 2025 Venue 360, Inc. All rights reserved</div>
                 <div>
                     <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -640,7 +686,7 @@
 
     <!-- Signup Modal -->
     <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog my-6">
             <div class="modal-content">
                 <div class="modal-header border-0">
                     <h5 class="modal-title">Sign up</h5>
