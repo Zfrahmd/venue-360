@@ -9,6 +9,11 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   after_initialize :set_default_user_role, if: :new_record?
 
+  def name
+    return self.first_name + " " + self.last_name
+  end
+  
+
   # set the default usertype
   def set_default_user_role
     self.role ||= :user
