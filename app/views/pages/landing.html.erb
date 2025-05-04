@@ -33,8 +33,11 @@
 
 
 <div class="">
-    <h1 class="property-title">Single studio</h1>
+    <h1 class="property-title mb-4">Single studio</h1>
 </div>
+
+<%= render partial: "/layouts/carousel"%>
+<!--
 <section class="mt-4 mb-5">
     <div class="container px-0">
         <div class="row">
@@ -75,13 +78,13 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 
 <!-- Property Details -->
-<div class="row">
+<div class="row mt-4">
     <div class="col-lg-8">
         <div class="d-flex align-items-center mb-3">
-            <h5>Entire rental unit in Freetown, Sierra Leone</h5>
+            <h3>Entire rental unit in Freetown, Sierra Leone</h3>
         </div>
         
         <div class="d-flex flex-wrap gap-3 mb-4">
@@ -200,7 +203,7 @@
                     </div>
                 </div>
                 
-                <button class="btn btn-primary-custom w-100 py-2" id="bookNowBtn">Reserve</button>
+                <button class="btn btn-outline-custom w-100 py-2" id="bookNowBtn">Reserve</button>
                 <p class="text-center text-muted mt-2 mb-0">You won't be charged yet</p>
             </div>
         </div>
@@ -313,8 +316,7 @@
 <%= render partial: "pages/login_modal" %>
 <%= render partial: "pages/signup_modal" %>
 
-<!-- Bootstrap JS Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS Bundle with Popper --
 
 <script>
 // Form submissions
@@ -324,91 +326,4 @@
     var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
     loginModal.hide();
 }*/
-var signupModal = bootstrap.Modal.getInstance(document.getElementById('signupModal'));
-<%# document.getElementById('signupForm').onsubmit = function(e) {
-    e.preventDefault();
-    signupModal.hide();
-} %>
-
-/*document.getElementById('adminLoginForm').onsubmit = function(e) {
-    e.preventDefault();
-    const email = document.getElementById('adminEmail').value;
-    const password = document.getElementById('adminPassword').value;
-    
-    // Simple admin login check (in a real app, this would be server-side)
-    if (email === 'admin@luxstay.com' && password === 'admin123') {
-        alert('Admin login successful! Admin controls now visible.');
-        document.getElementById('adminActions').classList.remove('d-none');
-        var adminLoginModal = bootstrap.Modal.getInstance(document.getElementById('adminLoginModal'));
-        adminLoginModal.hide();
-    } else {
-        alert('Invalid admin credentials');
-    }
-}*/
-
-
-// Carousel functionality
-/*let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-item');
-const indicators = document.querySelectorAll('.indicator');
-
-function showSlide(index) {
-    if (index >= slides.length) index = 0;
-    if (index < 0) index = slides.length - 1;
-    
-    document.getElementById('carouselInner').style.transform = `translateX(-${index * 100}%)`;
-    
-    // Update indicators
-    indicators.forEach((indicator, i) => {
-        if (i === index) {
-            indicator.classList.add('active');
-        } else {
-            indicator.classList.remove('active');
-        }
-    });
-    
-    currentSlide = index;
-}
-
-function nextSlide() {
-    showSlide(currentSlide + 1);
-}
-
-function prevSlide() {
-    showSlide(currentSlide - 1);
-}
-
-function goToSlide(index) {
-    showSlide(index);
-}
-
-// Auto-advance slides every 5 seconds
-setInterval(nextSlide, 5000);
-*/
-
-// Book button functionality
-document.getElementById('bookNowBtn').onclick = function() {
-    const checkIn = document.getElementById('checkin').value;
-    const checkOut = document.getElementById('checkout').value;
-    
-    if (!checkIn || !checkOut) {
-        alert('Please select check-in and check-out dates');
-    } else {
-        alert(`Booking request for ${checkIn} to ${checkOut} would be processed here`);
-    }
-}
-
-// Initialize modals
-var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-var signupModal = new bootstrap.Modal(document.getElementById('signupModal'));
-//var adminLoginModal = new bootstrap.Modal(document.getElementById('adminLoginModal'));
-
-// Open modals when buttons are clicked
-document.getElementById('openLoginModal').onclick = function() {
-    loginModal.show();
-}
-
-document.getElementById('openSignupModal').onclick = function() {
-    signupModal.show();
-}
 </script>

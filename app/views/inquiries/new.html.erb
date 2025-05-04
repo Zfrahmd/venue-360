@@ -1,3 +1,4 @@
+<style>
 :root {
   /*--primary-color: #ff385c;*/
   --primary-color: #ff385c;
@@ -38,28 +39,22 @@ color: #DDDDDD;
 .btn-primary-custom {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-  color: #846add;
+  color: white;
 }
 
-/* .btn-primary-custom:hover {
+.btn-primary-custom:hover {
   background-color: var(--primary-hover);
   border-color: var(--primary-hover);
-} */
+}
 
 .btn-outline-custom {
-  /* border-color: var(--medium-gray); */
-  background-color: #846add;
-  color:white;
-  border-color: #846add;
+  border-color: var(--medium-gray);
 }
 
-.btn-outline-custom:hover {
-  /* background-color: var(--light-gray); */
-  background-color: #333333;
+<%# .btn-outline-custom:hover {
+  background-color: var(--light-gray);
   border: 1px solid #DDDDDD;
-  color:white;
-
-}
+} %>
 
 /* Hero Section */
 .hero {
@@ -729,114 +724,50 @@ textarea.input100 {
   }
 }
 
+</style>
 
-
-/* SIDE BAR*/
-
-:root {
-  --sidebar-width: 280px;
-  --sidebar-width-collapsed: 80px;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-.side-bar-container {
-
-.sidebar {
-  width: var(--sidebar-width);
-  height: 100vh;
-  background: linear-gradient(135deg, #1a1c2e 0%, #16181f 100%);
-  transition: all 0.3s ease;
-}
-
-.sidebar.collapsed {
-    width: var(--sidebar-width-collapsed);
-}
-
-.sidebar-link {
-    color: #a0a3bd;
-    transition: all 0.2s ease;
-    border-radius: 8px;
-    margin: 4px 16px;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.sidebar-link:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
-}
-
-.sidebar-link.active {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.logo-text {
-    background: linear-gradient(45deg, #6b8cff, #8b9fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: opacity 0.3s ease;
-}
-
-.notification-badge {
-    background: #ff6b6b;
-    padding: 2px 6px;
-    border-radius: 6px;
-    font-size: 0.7rem;
-}
-
-.profile-section {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.collapsed~.main-content {
-    margin-left: var(--sidebar-width-collapsed);
-}
-
-.toggle-btn {
-    position: absolute;
-    right: -15px;
-    top: 20px;
-    background: white;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    border: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    z-index: 100;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.collapsed .toggle-btn {
-    transform: rotate(180deg);
-}
-
-.collapsed .hide-on-collapse {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.collapsed .logo-text {
-    opacity: 0;
-}
-
-.collapsed .profile-info {
-    opacity: 0;
-}
-
-.collapsed .sidebar-link {
-    text-align: center;
-    padding: 1rem !important;
-    margin: 4px 8px;
-}
-
-.collapsed .sidebar-link i {
-    margin: 0 !important;
-}
-
-}
+<div class="bg-contact100">
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <div class="contact100-pic js-tilt" data-tilt>
+                <img src="https://i.imgur.com/VRFiMzM.png" alt="IMG">
+            </div>
+            <%= form_with(model: @inquiry, local: true, html: {class: "contact100-form validate-form" })  do |f| %>
+              <span class="contact100-form-title">
+                  Send Us an Inquiry
+              </span>
+              <div class="wrap-input100 validate-input" data-validate="First Name is required">
+                  <%= f.text_field :first_name, class:"input100", placeholder: "First Name" %>
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                  </span>
+              </div>
+              <div class="wrap-input100 validate-input">
+                <%= f.text_field :last_name, class:"input100", placeholder: "Last Name" %>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+              </div>
+              <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <%= f.text_field :email, class:"input100", placeholder: "Email" %>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span>
+              </div>
+              <div class="wrap-input100 validate-input" data-validate="Message is required">
+                <%= f.text_area :words, class:"input100", placeholder:"Message" %>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <span class="focus-input100"></span>
+                </span>
+              </div>
+              <div class="container-contact100-form-btn">
+                <%= f.submit :Send, class:"contact100-form-btn"%>
+              </div>
+            <% end %>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   root "pages#landing"
   get '/profile/user/:id', to: 'users#profile', as: 'user_profile'
-  # resources :users, only: [:index, :show]
+
+  resources :inquiries
   
 end
