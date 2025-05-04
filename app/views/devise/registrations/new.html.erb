@@ -7,12 +7,12 @@
           <%= render "devise/shared/error_messages", resource: resource %>
           <div class="field mt-4">
             <%= f.label :first_name %><br />
-            <%= f.email_field :first_name, autofocus: true, autocomplete: "first-name", class: "form-control"%>
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name", class: "form-control"%>
           </div>
 
           <div class="field mt-4">
             <%= f.label :last_name %><br />
-            <%= f.email_field :last_name, autofocus: true, autocomplete: "last-name", class: "form-control"%>
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "last-name", class: "form-control"%>
           </div>
   
           <div class="field mt-4">
@@ -26,7 +26,6 @@
               <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
           </div>
 
             <div class="d mt-4">
