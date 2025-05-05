@@ -124,7 +124,7 @@
       <div class="col-lg-4">
           <div class="card booking-card">
               <div class="card-body">
-                  <div class="price mb-3">$350 <span class="price-period">per night</span></div>
+                  <div class="price mb-3">$95 <span class="price-period">per night</span></div>
                   
                   <div class="mb-3">
                       <div class="row g-2">
@@ -138,8 +138,7 @@
                           </div>
                       </div>
                   </div>
-                  
-                  <button class="btn btn-outline-custom w-100 py-2" id="bookNowBtn">Reserve</button>
+                  <%= button_to "Reserve", new_inquiry_path(), method: :get, id: "bookNowBtn", class: "btn btn-outline-custom w-100 py-2"%>
                   <p class="text-center text-muted mt-2 mb-0">You won't be charged yet</p>
               </div>
           </div>

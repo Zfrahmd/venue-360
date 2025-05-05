@@ -26,10 +26,10 @@
           <i class="fas fa-commenting me-3"></i>
           <span class="hide-on-collapse">Inquiries</span>
         <% end %>
-      <a href="#" class="sidebar-link text-decoration-none p-3">
+      <%= link_to new_inquiry_path, class: "sidebar-link text-decoration-none p-3" do %>
         <i class="fas fa-calendar-check me-3"></i>
         <span class="hide-on-collapse">Reservations</span>
-      </a>
+      <% end %>
       <% if current_user.admin?%>
         <a href="#" class="sidebar-link text-decoration-none p-3">
             <i class="fas fa-users me-3"></i>
