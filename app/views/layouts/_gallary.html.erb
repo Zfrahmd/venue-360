@@ -1,0 +1,48 @@
+<div class="col-lg-6 p-0">
+	<div class="row mx-3 mb-2">
+		<div class="col-lg-6 col-md-12 col-xs-12 p-0" id="gc-1">
+				<div class="img-container" style="height: 230px;">
+						<img src="https://i.postimg.cc/k4BQN0hs/IMG-20250427-WA0071.jpg" alt="Gallery image 1" class="gallery-img">
+				</div>
+		</div>
+		<div class="col-lg-6 col-md-12 col-xs-12 p-0" id="gc-2">
+				<div class="img-container last-ones" style="height: 230px;">
+						<img src="https://i.postimg.cc/xTrvHFGG/IMG-20250427-WA0078.jpg" alt="Gallery image 2" class="gallery-img">
+				</div>
+		</div>
+	</div>
+
+	<div class="row mx-3">
+		<div class="col-lg-6 col-md-12 col-xs-12 p-0" id="gc-3">
+				<div class="img-container" style="height: 230px;">
+						<img src="https://i.postimg.cc/cCtv6Z5q/IMG-20250427-WA0066.jpg" alt="Gallery image 3" class="gallery-img">
+				</div>
+		</div>
+		<div class="col-lg-6 col-md-12 col-xs-12 p-0" id="gc-4">
+				<div class="img-container last-ones" style="height: 230px;">
+						<img src="https://i.postimg.cc/7ZnnqM23/IMG-20250427-WA0067.jpg" alt="Gallery image 4" class="gallery-img">
+				</div>
+		</div>
+	</div>
+</div>
+
+<!-- IMAGE VIEWER MODAL -->
+	<div id="image-viewer">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="full-image">
+	</div>
+<script>
+	// JS FOR IMAGE VIEWING
+	$(".img-container img").click(function(){
+			$("#full-image").attr("src", $(this).attr("src"));
+			$('#image-viewer').show();
+	});
+	
+	$("#image-viewer .close").click(function(){
+			$('#image-viewer').hide();
+	});
+
+	$("#image-viewer").click(function(){
+			$('#image-viewer').hide();
+	});
+</script>

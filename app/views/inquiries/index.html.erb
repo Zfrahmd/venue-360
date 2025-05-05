@@ -1,7 +1,7 @@
 <div class="row">
   <%= render partial: "/layouts/side_bar"%>
 
-  <div class="col-8 justify-content-center">
+  <div class="col-lg-10 col-md-9 col-xs-12 justify-content-center">
     <div class="text-center">
       <% if current_user.admin? %>
         <h2 class="text-center p-5">Inquiries Received</h2>
@@ -16,6 +16,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
+              <th scope="col">Phone #</th>
               <th scope="col">Email</th>
               <th scope="col">Message</th>
               <th scope="col">Action</th>
@@ -26,6 +27,7 @@
               <tr>
                 <th scope="row"><%= inquiry.id %></th>
                 <td><%= inquiry.user_name.capitalize %></td>
+                <td><%= inquiry.phone_exists %></td>
                 <td><%= inquiry.email.capitalize %></td>
                 <td><%= inquiry.words.truncate(40) %></td>
                 <td><%= button_to 'Remove', inquiry_path(inquiry.id), method: :delete, data: {confirm: "Are You Sure you want to delete this inquiry?"}, class: "btn btn-outline-custom"%></td>
