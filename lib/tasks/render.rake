@@ -6,7 +6,7 @@ namespace :render do
       Rake::Task['db:migrate'].invoke
       
       puts 'Seeding admin user...'
-      User.create!(
+      User.find_or_create_by(
         first_name: "super",
         last_name: "admin",
         role: "admin",
@@ -14,6 +14,7 @@ namespace :render do
         password: ENV['ADMIN_PASSWORD'],
         password_confirmation: ENV['ADMIN_PASSWORD'],
       )
+      puts 'Admin User Seeded!'
     end
   end
 end
