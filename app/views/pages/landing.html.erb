@@ -2,7 +2,7 @@
 <!-- Main Content -->
 <main class="container my-4">
   <div class="">
-      <h1 class="property-title mb-4">Single studio</h1>
+      <h1 class="property-title mb-4"><strong>Single studio</strong></h1>
   </div>
 
   <div class="row">
@@ -14,53 +14,51 @@
 
   </div>
 
-  <%#= render partial: "/pages/gallary"%>
-
   <!-- Property Details -->
   <div class="row mt-4">
-      <div class="col-lg-8">
-          <div class="d-flex align-items-center mb-3">
-              <h3>Entire rental unit in Freetown, Sierra Leone</h3>
-          </div>
-          
-          <div class="d-flex flex-wrap gap-3 mb-4">
-              <div class="d-flex align-items-center">
-                  <i class="fas fa-home highlight-icon"></i>
-                  <span>1 guest</span>
-              </div>
-              <div class="d-flex align-items-center">
-                  <i class="fas fa-user-friends highlight-icon"></i>
-                  <span>Studio</span>
-              </div>
-              <div class="d-flex align-items-center">
-                  <i class="fas fa-bed highlight-icon"></i>
-                  <span>1 bedroom</span>
-              </div>
-              <div class="d-flex align-items-center">
-                  <i class="fas fa-bath highlight-icon"></i>
-                  <span>1 baths</span>
-              </div>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="col-lg-8">
+        <div class="d-flex align-items-center mb-3">
+          <h3><strong>Entire rental unit in Freetown, Sierra Leone</strong></h3>
+        </div>
+        
+        <div class="d-flex flex-wrap gap-3 mb-4">
           <div class="d-flex align-items-center">
-              <div class="rating-stars mb-1">
-                  <i class="fas fa-star"></i>
-              </div>
-              <div class="text-muted mx-2">2 reviews</div>
+            <i class="fas fa-home highlight-icon"></i>
+            <span>1 guest</span>
           </div>
+          <div class="d-flex align-items-center">
+            <i class="fas fa-user-friends highlight-icon"></i>
+            <span>Studio</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fas fa-bed highlight-icon"></i>
+            <span>1 bedroom</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fas fa-bath highlight-icon"></i>
+            <span>1 baths</span>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center">
+          <div class="rating-stars mb-1">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="text-muted mx-2">2 reviews</div>
+        </div>
       </div>
-          <hr>
+          <hr class="row-marker">
           <div class="my-4">
               <p>Experience luxury living in this stunning living space. This spacious 2-bedroom, 2-bathroom apartment features high-end finishes, floor-to-ceiling windows, and a private terrace.</p>
               <p>The open-concept living area is perfect for entertaining, while the gourmet kitchen comes fully equipped with premium appliances. 
               Located in the Western part of Freetown, you'll be steps away from the city's best restaurants, shops, and attractions.</p>
           </div>
           
-          <hr>
+          <hr class="row-marker my-5">
           
           <div class="my-4">
-              <h4>What this place offers</h4>
+              <h4><strong>What this place offers</strong></h4>
               <div class="row mt-3">
                   <div class="col-md-6 mb-3">
                       <div class="d-flex align-items-center">
@@ -124,7 +122,7 @@
       <div class="col-lg-4">
           <div class="card booking-card">
               <div class="card-body">
-                  <div class="price mb-3">$350 <span class="price-period">per night</span></div>
+                  <div class="price mb-3">$95 <span class="price-period">per night</span></div>
                   
                   <div class="mb-3">
                       <div class="row g-2">
@@ -138,115 +136,19 @@
                           </div>
                       </div>
                   </div>
-                  
-                  <button class="btn btn-outline-custom w-100 py-2" id="bookNowBtn">Reserve</button>
+                  <%= button_to "Reserve", new_inquiry_path(), method: :get, id: "bookNowBtn", class: "btn btn-outline-custom w-100 py-2"%>
                   <p class="text-center text-muted mt-2 mb-0">You won't be charged yet</p>
               </div>
           </div>
       </div>
   </div>
+  <hr class="row-marker my-5">
 
-  <!-- Reviews Section -->
-  <section class="mt-5">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-          <div class="d-flex align-items-center">
-              <div class="average-rating me-3">4.92</div>
-              <div>
-                  <div class="rating-stars mb-1">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star-half-alt"></i>
-                  </div>
-                  <div class="text-muted">24 reviews</div>
-              </div>
-          </div>
-          <button class="btn btn-outline-custom">Write a review</button>
-      </div>
-      
-      <div class="row">
-          <div class="col-md-6">
-              <div class="review-card">
-                  <div class="d-flex align-items-center mb-3">
-                      <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah" class="reviewer-avatar me-3">
-                      <div>
-                          <div class="fw-bold">Sarah</div>
-                          <div class="review-date">March 2024</div>
-                      </div>
-                  </div>
-                  <div class="rating-stars mb-2">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                  </div>
-                  <p class="mb-0">Absolutely stunning apartment with breathtaking views! The location was perfect and the host was incredibly responsive. Would definitely stay here again on my next trip to New York.</p>
-              </div>
-          </div>
-          
-          <div class="col-md-6">
-              <div class="review-card">
-                  <div class="d-flex align-items-center mb-3">
-                      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael" class="reviewer-avatar me-3">
-                      <div>
-                          <div class="fw-bold">Michael</div>
-                          <div class="review-date">February 2024</div>
-                      </div>
-                  </div>
-                  <div class="rating-stars mb-2">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                  </div>
-                  <p class="mb-0">The penthouse exceeded all our expectations. The interior design is impeccable and the amenities were top-notch. The terrace was our favorite spot to enjoy the city views. Highly recommend!</p>
-              </div>
-          </div>
-          
-          <div class="col-md-6">
-              <div class="review-card">
-                  <div class="d-flex align-items-center mb-3">
-                      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jessica" class="reviewer-avatar me-3">
-                      <div>
-                          <div class="fw-bold">Jessica</div>
-                          <div class="review-date">January 2024</div>
-                      </div>
-                  </div>
-                  <div class="rating-stars mb-2">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                  </div>
-                  <p class="mb-0">Perfect stay for our anniversary weekend. The apartment was spotless and had everything we needed. The check-in process was seamless and the host provided great recommendations.</p>
-              </div>
-          </div>
-          
-          <div class="col-md-6">
-              <div class="review-card">
-                  <div class="d-flex align-items-center mb-3">
-                      <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="David" class="reviewer-avatar me-3">
-                      <div>
-                          <div class="fw-bold">David</div>
-                          <div class="review-date">December 2023</div>
-                      </div>
-                  </div>
-                  <div class="rating-stars mb-2">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star-half-alt"></i>
-                  </div>
-                  <p class="mb-0">Great location and beautiful apartment. The only minor issue was that the WiFi was a bit slow at times, but everything else was perfect. Would stay here again.</p>
-              </div>
-          </div>
-      </div>
-  </section>
+  <%= render partial: "/pages/reviews"%>
+  <hr class="row-marker my-5">
+
+  <%= render partial: "layouts/gmaps" %>
+  <hr class="row-marker my-5">
 </main>
 
 <%= render partial: "pages/login_modal" %>

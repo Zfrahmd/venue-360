@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+/node_modules
+
+/byebug
+
 # Ignore all environment files.
 /.env*
 
@@ -32,3 +36,11 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+.byebug_history
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
