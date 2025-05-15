@@ -9,7 +9,18 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Anywhere </a>
+          <div class="dropdown d-flex">
+            <%= link_to "Rooms", rooms_path, class: "nav-link" %>
+            <button class="dropdown-toggle nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Single Studio</a></li>
+              <li><a class="dropdown-item" href="#">Ocean view Flat</a></li>
+              <li><a class="dropdown-item" href="#">Ocean & City view</a></li>
+              <li><a class="dropdown-item" href="#">Ocean & city view studio</a></li>
+            </ul>
+          </div>
         </li>
         <span class="py-2 nav-span">|</span>
         <li class="nav-item">
