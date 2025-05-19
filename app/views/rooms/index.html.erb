@@ -1,5 +1,15 @@
 
 
-<% @rooms.each do |room| %>
-  <%= room.name %>  
-<% end %>
+<div class="card">
+  <% @rooms.each do |room| %>
+    <%= room.name %> | <%= room.price_per_night %> | <%= room.headline %>
+    <br>
+    <span>The room has <%= room.room_images.count %> images</span>  
+    <% room.room_images.each do |rmi| %>
+      <% if !rmi.image_url.empty? %>
+        <img src="<%= rmi.image_url %>" class="d-block" alt="..." width="250px" height="200px">
+      <% end %>
+    <% end %>
+    <br>
+  <% end %>
+</div>

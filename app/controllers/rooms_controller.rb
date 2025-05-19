@@ -5,14 +5,15 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    @room.room_images.new
   end
 
   def create
     # byebug
-    @room = @room.assign_attributes(room_params)
+    @room = Room.new(room_params)
     @room.room_images.build
     if @room.save
-        redirect_back fallback_location: root_path, notice: "The room was created successfully"
+      redirect_back fallback_location: root_path, notice: "The room was created successfully"
     else
       redirect_back fallback_location: root_path, alert: @room.errors.full_messages.to_sentence
     end
@@ -21,6 +22,6 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:name, :headline, :description, :room_number, 
                                  :room_type, :price_per_night, :capacity, :available,
-                                 room_images_attributes: [:image_url])
+                                 room_images_attributes: [:id, :image_url])
   end
 end

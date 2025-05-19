@@ -727,79 +727,79 @@ textarea.input100 {
 </style>
 
 <div class="bg-contact100">
-    <div class="container-contact100">
-        <div class="wrap-contact100">
-            <div class="contact100-pic js-tilt" data-tilt>
-                <img src="https://i.imgur.com/VRFiMzM.png" alt="IMG">
-            </div>
-            <%= form_with(model: @room, local: true, html: {class: "contact100-form validate-form" })  do |f| %>
-              <span class="contact100-form-title">
-                  Create a New Listing for Room
-              </span>
-              <div class="wrap-input100 validate-input" data-validate="First Name is required">
-                  <%= f.text_field :name, class:"input100", placeholder: "Room Name" %>
-                  <span class="focus-input100"></span>
-                  <span class="symbol-input100">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                  </span>
-              </div>
-              <div class="wrap-input100 validate-input">
-                <%= f.text_field :headline, class:"input100", placeholder: "Headline" %>
-                <span class="focus-input100"></span>
-                <span class="symbol-input100">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                </span>
-              </div>
-              <div class="wrap-input100 validate-input">
-                <%= f.number_field :capacity, class:"input100", placeholder: "Capacity of Room", min: "1" %>
-                <span class="focus-input100"></span>
-                <span class="symbol-input100">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                </span>
-              </div>
-              <div class="wrap-input100 validate-input">
-                <%= f.number_field :room_number, class:"input100", placeholder: "Room #", min: "0" %>
-                <span class="focus-input100"></span>
-                <span class="symbol-input100">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                </span>
-              </div>
-              <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                <span>Price per night</span>
-                <%= f.number_field :price_per_night, class:"input100", value: number_to_currency(f.object.price_per_night.to_f, delimiter: '', unit: ''), step: :any %>
-                <span class="focus-input100"></span>
-                <span class="symbol-input100">
-                  <i class="fa fa-email" aria-hidden="true"></i>
-                </span>
-              </div>
-              <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                <span>Room Type</span>
-                <%= f.select :room_type, Room.room_types.keys.map {|key| [key.humanize, key]}, {}, {class:"form-select"} %>
-                <span class="focus-input100"></span>
-                <span class="symbol-input100">
-                    <i class="fa fa-email" aria-hidden="true"></i>
-                </span>
-              </div>
-              <div class="wrap-input100 validate-input" data-validate="Message is required">
-                <%= f.text_area :description, class:"input100", placeholder:"Describe Rooms Awesomeness" %>
-                <span class="focus-input100"></span>
-                <span class="symbol-input100">
-                    <span class="focus-input100"></span>
-                </span>
-              </div>
-              <%= f.fields_for :room_images do |room_image_builder| %>
-                <div class="wrap-input100 validate-input" data-validate="Message is required">
-                  <%= f.text_field :image_url, class:"input100", placeholder:"enter image url from imgur.com" %>
-                  <span class="focus-input100"></span>
-                  <span class="symbol-input100">
-                      <span class="focus-input100"></span>
-                  </span>
-                </div>
-              <% end %>
-              <div class="container-contact100-form-btn">
-                <%= f.submit :Create, class:"contact100-form-btn"%>
-              </div>
-            <% end %>
+  <div class="container-contact100">
+    <div class="wrap-contact100">
+      <div class="contact100-pic js-tilt" data-tilt>
+          <img src="https://i.imgur.com/VRFiMzM.png" alt="IMG">
+      </div>
+      <%= form_with(model: @room, local: true, html: {class: "contact100-form validate-form" }) do |f| %>
+        <span class="contact100-form-title">
+          Create a New Listing for Room
+        </span>
+        <div class="wrap-input100 validate-input" data-validate="First Name is required">
+          <%= f.text_field :name, class:"input100", placeholder: "Room Name" %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+              <i class="fa fa-user" aria-hidden="true"></i>
+          </span>
         </div>
+        <div class="wrap-input100 validate-input">
+          <%= f.text_field :headline, class:"input100", placeholder: "Headline" %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+              <i class="fa fa-user" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="wrap-input100 validate-input">
+          <%= f.number_field :capacity, class:"input100", placeholder: "Capacity of Room", min: "1" %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="wrap-input100 validate-input">
+          <%= f.number_field :room_number, class:"input100", placeholder: "Room #", min: "0" %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+          <span>Price per night</span>
+          <%= f.number_field :price_per_night, class:"input100", value: number_to_currency(f.object.price_per_night.to_f, delimiter: '', unit: ''), step: :any %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-email" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+          <span>Room Type</span>
+          <%= f.select :room_type, Room.room_types.keys.map {|key| [key.humanize, key]}, {}, {class:"form-select"} %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+              <i class="fa fa-email" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="Message is required">
+          <%= f.text_area :description, class:"input100", placeholder:"Describe Rooms Awesomeness" %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+              <span class="focus-input100"></span>
+          </span>
+        </div>
+        <%= f.fields_for :room_images do |rf| %>
+          <div class="wrap-input100 validate-input" data-validate="Message is required">
+            <%= rf.text_field :image_url, class:"input100", placeholder:"enter image url from imgur.com" %>
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <span class="focus-input100"></span>
+            </span>
+          </div>
+        <% end %>
+        <div class="container-contact100-form-btn">
+          <%= f.submit :Create, class:"contact100-form-btn"%>
+        </div>
+      <% end %>
     </div>
+  </div>
 </div>
