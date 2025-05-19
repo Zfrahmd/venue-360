@@ -5,13 +5,11 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
-    @room.room_images.new
+    @room.room_images.build
   end
 
   def create
-    # byebug
     @room = Room.new(room_params)
-    @room.room_images.build
     if @room.save
       redirect_back fallback_location: root_path, notice: "The room was created successfully"
     else
