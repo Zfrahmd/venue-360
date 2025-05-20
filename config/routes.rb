@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get '/profile/user/:id', to: 'users#profile', as: 'user_profile'
 
   resources :inquiries
-  resources :rooms
+  resources :rooms do 
+    collection do
+      get "manage" 
+    end
+  end
   
 end

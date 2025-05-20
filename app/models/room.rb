@@ -2,7 +2,7 @@ class Room < ApplicationRecord
   has_many :room_amenities
   has_many :amenities, through: :room_amenities
   has_many :reservations
-  has_many :room_images
+  has_many :room_images, dependent: :destroy
 
   validates :room_number, presence: true, uniqueness: true
   validates :room_type, presence: true

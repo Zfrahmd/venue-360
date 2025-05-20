@@ -32,7 +32,7 @@ class InquiriesController < ApplicationController
 
   def find_inquiry
     @inquiry = Inquiry.find(params[:id])
-end
+  end
 
   def inquiry_params
     params.require(:inquiry).permit(:first_name, :last_name, :email, :phone, :words)

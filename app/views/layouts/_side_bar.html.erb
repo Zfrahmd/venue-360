@@ -48,8 +48,8 @@
           </div>
           <div class="collapse" id="account-collapse" style="">
             <ul class="px-3">
-              <li><%= link_to "Add Room", new_room_path(current_user.id), class: "sidebar-link-drop-item" %>
-              <li><a class="sidebar-link-drop-item" href="#">Management</a></li>
+              <li><%= link_to "Add New Listing", new_room_path(current_user.id), class: "sidebar-link-drop-item" %></li>
+              <li><%= link_to "Manage", manage_rooms_path, class: "sidebar-link-drop-item" %></li>
             </ul>
           </div>
         </div>

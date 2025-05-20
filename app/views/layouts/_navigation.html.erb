@@ -15,10 +15,11 @@
               More
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Single Studio</a></li>
-              <li><a class="dropdown-item" href="#">Ocean view Flat</a></li>
-              <li><a class="dropdown-item" href="#">Ocean & City view</a></li>
-              <li><a class="dropdown-item" href="#">Ocean & city view studio</a></li>
+              <% Room.all.each do |room| %>
+                <li>
+                  <%= link_to room.name, room, class: "dropdown-item" %>
+                </li>
+              <% end %>
             </ul>
           </div>
         </li>
