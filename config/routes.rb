@@ -19,5 +19,7 @@ Rails.application.routes.draw do
       get "manage" 
     end
   end
+
+  resources :amenities
   
 end

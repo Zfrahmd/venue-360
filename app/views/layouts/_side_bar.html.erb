@@ -39,17 +39,31 @@
           <i class="fas fa-gear me-3"></i>
           <span class="hide-on-collapse">Settings</span>
         </a>
-        <div class="">
+        <div class="rooms">
           <div class="sidebar-link p-3">  
             <i class="fas fa-users me-3"></i>
-            <button class="dropdown-toggle sidebar-collapsible-button" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+            <button class="dropdown-toggle sidebar-collapsible-button" data-bs-toggle="collapse" data-bs-target="#rooms-collapse" aria-expanded="false">
               Rooms
+            </button>
+          </div>
+          <div class="collapse" id="rooms-collapse" style="">
+            <ul class="px-3">
+              <li><%= link_to "Add New Listing", new_room_path(current_user.id), class: "sidebar-link-drop-item" %></li>
+              <li><%= link_to "Manage", manage_rooms_path, class: "sidebar-link-drop-item" %></li>
+            </ul>
+          </div>
+        </div>
+        <div class="amenities">
+          <div class="sidebar-link p-3">
+            <i class="fas fa-users me-3"></i>
+            <button class="dropdown-toggle sidebar-collapsible-button" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+              Amenities
             </button>
           </div>
           <div class="collapse" id="account-collapse" style="">
             <ul class="px-3">
-              <li><%= link_to "Add New Listing", new_room_path(current_user.id), class: "sidebar-link-drop-item" %></li>
-              <li><%= link_to "Manage", manage_rooms_path, class: "sidebar-link-drop-item" %></li>
+              <li><%= link_to "Create Amenity", new_amenity_path(), class: "sidebar-link-drop-item" %></li>
+              <li><%= link_to "Manage", amenities_path, class: "sidebar-link-drop-item" %></li>
             </ul>
           </div>
         </div>
